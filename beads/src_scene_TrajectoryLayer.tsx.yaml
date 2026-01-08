@@ -1,6 +1,6 @@
 id: M2.5
 title: Trajectory manager
-status: pending
+status: completed
 owner: assistant
 depends_on:
   - M2.4
