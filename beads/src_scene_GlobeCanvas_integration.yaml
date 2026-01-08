@@ -1,6 +1,6 @@
 id: M2.10
 title: Integrate grid/trajectory/marker
-status: pending
+status: completed
 owner: assistant
 depends_on:
   - M2.3
