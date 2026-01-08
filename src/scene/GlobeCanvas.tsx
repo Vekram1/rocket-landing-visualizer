@@ -1,12 +1,12 @@
 import { useMemo, Suspense, useEffect, useRef, useCallback } from 'react'
 import { Canvas } from '@react-three/fiber'
-import { OrbitControls } from '@react-three/drei'
 import type { OrbitControls as OrbitControlsImpl } from 'three-stdlib'
 import GlobeMesh from './GlobeMesh'
 import GridLayer from './GridLayer'
 import TrajectoryLayer from './TrajectoryLayer'
 import VehicleMarker from './VehicleMarker'
 import CameraRig from './CameraRig'
+import Controls from './Controls'
 import type { TrajectorySegment } from './TrajectoryLayer'
 import type { TelemetryDataset } from '@/data/types'
 
@@ -73,14 +73,7 @@ export function GlobeCanvas({ resetSignal = 0, fitEnabled = true }: GlobeCanvasP
           <CameraRig samples={shuttleData.samples} controlsRef={controlsRef} resetSignal={resetSignal} />
         )}
       </Suspense>
-      <OrbitControls
-        ref={controlsRef}
-        enablePan={false}
-        enableDamping
-        dampingFactor={0.08}
-        minDistance={1.5}
-        maxDistance={6}
-      />
+      <Controls ref={controlsRef} />
     </Canvas>
   )
 }
