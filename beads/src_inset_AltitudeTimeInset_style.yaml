@@ -1,0 +1,14 @@
+id: M8.2
+title: Altitude inset style polish
+status: completed
+owner: assistant
+depends_on:
+  - M4.13
+  - M8.1
+description: Polish AltitudeTimeInset visuals (axes/grid/labels/units, cursor styling, below-ground shading) to improve readability.
+acceptance_criteria: |
+  - AltitudeTimeInset shows clear axes/grid/labels with km units, cursor highlight, and optional below-ground shading.
+  - Colors align with app theme; typecheck/build pass.
+files_touched:
+  - src/inset/AltitudeTimeInset.tsx
+  - src/inset/altitudeTimeInset.css

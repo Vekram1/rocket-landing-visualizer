@@ -5,7 +5,8 @@
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 12px;
   overflow: hidden;
-  background: rgba(12, 15, 22, 0.9);
+  background: radial-gradient(circle at 20% 20%, rgba(126, 243, 255, 0.05), transparent 40%),
+    rgba(12, 15, 22, 0.9);
 }
 
 .altitude-inset canvas {

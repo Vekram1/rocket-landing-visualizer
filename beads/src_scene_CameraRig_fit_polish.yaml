@@ -1,0 +1,14 @@
+id: M8.3
+title: Fit-to-trajectory polish
+status: pending
+owner: assistant
+depends_on:
+  - M4.7
+  - M3.10
+description: Refine CameraRig fit so it uses dataset bounds/exaggeration consistently, with safe defaults and reset integration.
+acceptance_criteria: |
+  - CameraRig fit uses computed bounds/bounding sphere with exaggeration and avoids overshooting on flat trajectories.
+  - Reset/fit controls continue to work; typecheck/build pass.
+files_touched:
+  - src/scene/CameraRig.tsx
+  - src/scene/GlobeCanvas.tsx (if needed)

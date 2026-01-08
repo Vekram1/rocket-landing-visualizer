@@ -190,4 +190,12 @@ Agents MUST NOT assume they can run these commands themselves; they only propose
 - NEVER stop before pushing - that leaves work stranded locally
 - NEVER say "ready to push when you are" - YOU must push
 - If push fails, resolve and retry until it succeeds
-Use 'bd' for task tracking
+- Use 'bd' for task tracking
+
+
+
+## Process for Creating Beads
+- Read PLAN.md to understand what project requirements are for each milestone.
+- write beads for the milestone.
+- run bd create to create the bead
+- store the bead .yaml in the beads folder

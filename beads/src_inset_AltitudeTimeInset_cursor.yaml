@@ -1,0 +1,15 @@
+id: M8.1
+title: Altitude inset time cursor sync
+status: pending
+owner: assistant
+depends_on:
+  - M4.13
+  - M4.17
+description: Keep AltitudeTimeInset cursor/marker aligned with playback time using interpolation, and handle empty datasets safely.
+acceptance_criteria: |
+  - AltitudeTimeInset cursor and marker track playback time (interpolated sample) without lag.
+  - Graceful fallback when no samples; no runtime errors.
+  - Typecheck/build pass.
+files_touched:
+  - src/inset/AltitudeTimeInset.tsx
+  - src/math/interpolation.ts (if needed)
