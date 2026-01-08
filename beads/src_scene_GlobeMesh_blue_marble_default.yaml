@@ -1,6 +1,6 @@
 id: M6.2
 title: Wire Blue Marble as default satellite URL
-status: pending
+status: completed
 owner: assistant
 depends_on:
   - M6.1

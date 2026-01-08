@@ -2,6 +2,8 @@ import { useMemo } from 'react'
 import { useLoader } from '@react-three/fiber'
 import { TextureLoader } from 'three'
 
+const DEFAULT_SATELLITE_URL = '/assets/blue-marble-8k.jpg'
+
 export type GlobeMeshProps = {
   radius?: number
   wireColor?: string
@@ -15,7 +17,7 @@ export function GlobeMesh({
   wireColor = '#264a7a',
   surfaceColor = '#0f141f',
   useSatelliteTexture = false,
-  textureUrl = '/assets/satellite-base.png',
+  textureUrl = DEFAULT_SATELLITE_URL,
 }: GlobeMeshProps) {
   const args = useMemo(() => [radius, 64, 64] as const, [radius])
   const texture = useSatelliteTexture ? useLoader(TextureLoader, textureUrl) : null
