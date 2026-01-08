@@ -1,6 +1,6 @@
 id: M3.4
 title: Import router for telemetry files
-status: pending
+status: completed
 owner: assistant
 depends_on:
   - M3.3
