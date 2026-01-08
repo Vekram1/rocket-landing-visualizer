@@ -1,1 +1,2 @@
 satellite-base.png: placeholder equirect-style texture generated locally (single-color gradient placeholder). License: CC0 (authored in-repo). Replace with real satellite imagery before release.
+blue-marble-8k.jpg: 8192x4096 Earth daymap from solarsystemscope.com/textures (8k_earth_daymap.jpg). Use per solarsystemscope license (free for personal/educational with attribution). Replace with NASA Blue Marble when available and update license accordingly.

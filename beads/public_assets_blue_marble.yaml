@@ -1,6 +1,6 @@
 id: M6.1
 title: Add 8k Blue Marble texture with license
-status: pending
+status: completed
 owner: assistant
 depends_on:
   - M5.1
