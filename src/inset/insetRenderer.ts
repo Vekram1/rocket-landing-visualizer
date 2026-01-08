@@ -1,5 +1,5 @@
 import type { TelemetrySample } from '@/data/types'
-import { toMercator, splitAntiMeridian } from './mercatorMath'
+import { toMercator, splitAntiMeridian, MAX_MERC_Y } from './mercatorMath'
 
 const GRID_STEP = 30
 
@@ -8,8 +8,8 @@ export function drawGrid(ctx: CanvasRenderingContext2D, width: number, height: n
   ctx.strokeStyle = 'rgba(255,255,255,0.1)'
   ctx.lineWidth = 1
 
-  const latMax = Math.log(Math.tan(Math.PI / 4 + (Math.PI / 180) * 85.05112878 * 0.5))
-  const latMin = -latMax
+  const latMax = MAX_MERC_Y
+  const latMin = -MAX_MERC_Y
 
   for (let lon = -180; lon <= 180; lon += GRID_STEP) {
     const x = ((lon + 180) / 360) * width
@@ -41,8 +41,8 @@ export function drawTrajectory(ctx: CanvasRenderingContext2D, samples: Telemetry
   const projected = samples.map((s) => toMercator(s.latDeg, s.lonDeg))
   const segments = splitAntiMeridian(projected)
 
-  const latMax = Math.log(Math.tan(Math.PI / 4 + (Math.PI / 180) * 85.05112878 * 0.5))
-  const latMin = -latMax
+  const latMax = MAX_MERC_Y
+  const latMin = -MAX_MERC_Y
 
   segments.forEach((seg) => {
     if (seg.length < 2) return
@@ -69,8 +69,8 @@ export function drawMarker(ctx: CanvasRenderingContext2D, sample: TelemetrySampl
   ctx.lineWidth = 2
 
   const { x, y } = toMercator(sample.latDeg, sample.lonDeg)
-  const latMax = Math.log(Math.tan(Math.PI / 4 + (Math.PI / 180) * 85.05112878 * 0.5))
-  const latMin = -latMax
+  const latMax = MAX_MERC_Y
+  const latMin = -MAX_MERC_Y
   const normX = (x + Math.PI) / (2 * Math.PI)
   const normY = 1 - (y - latMin) / (latMax - latMin)
   const cx = normX * width

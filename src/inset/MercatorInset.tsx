@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef } from 'react'
 import { drawGrid, drawMarker, drawTrajectory } from './insetRenderer'
 import { useActiveSamples, usePlayState } from '@/state/selectors'
+import { interpolateSample } from '@/math/interpolation'
 import './mercatorInset.css'
 
 function pickSample(samples: ReturnType<typeof useActiveSamples>, t: number) {
@@ -19,7 +20,9 @@ export function MercatorInset() {
   const { currentTime } = usePlayState()
   const canvasRef = useRef<HTMLCanvasElement | null>(null)
 
-  const currentSample = useMemo(() => pickSample(samples, currentTime), [samples, currentTime])
+  const currentSample = useMemo(() => {
+    return interpolateSample(samples, currentTime) ?? pickSample(samples, currentTime)
+  }, [samples, currentTime])
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -32,7 +35,7 @@ export function MercatorInset() {
       const { clientWidth, clientHeight } = canvas
       canvas.width = clientWidth * dpr
       canvas.height = clientHeight * dpr
-      ctx.scale(dpr, dpr)
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
     }
 
     resize()
@@ -44,7 +47,8 @@ export function MercatorInset() {
     window.addEventListener('resize', handleResize)
 
     const render = () => {
-      const { width, height } = canvas
+      const width = canvas.clientWidth
+      const height = canvas.clientHeight
       ctx.clearRect(0, 0, width, height)
       drawGrid(ctx, width, height)
       drawTrajectory(ctx, samples, width, height)

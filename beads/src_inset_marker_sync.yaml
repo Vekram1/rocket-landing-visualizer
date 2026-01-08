@@ -1,6 +1,6 @@
 id: M7.2
 title: Sync inset marker with playback
-status: pending
+status: completed
 owner: assistant
 depends_on:
   - M4.11
