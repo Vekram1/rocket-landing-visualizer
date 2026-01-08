@@ -1,0 +1,19 @@
+id: M2.10
+title: Integrate grid/trajectory/marker
+status: pending
+owner: assistant
+depends_on:
+  - M2.3
+  - M2.5
+  - M2.6
+  - M2.7
+  - M2.9
+description: Wire GridLayer, TrajectoryLayer, VehicleMarker, and sample data into GlobeCanvas for a working demo scene.
+acceptance_criteria: |
+  - GlobeCanvas composes grid, trajectories, marker, and globe mesh using sample data without runtime errors.
+  - Demo renders visible trajectory and marker in dev server.
+files_touched:
+  - src/scene/GlobeCanvas.tsx
+  - src/scene/index.ts (if added)
+  - public/data/missions.json
+  - public/data/sample_shuttle.json

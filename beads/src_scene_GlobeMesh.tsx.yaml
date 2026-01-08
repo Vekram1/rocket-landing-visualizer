@@ -1,0 +1,12 @@
+id: M2.9
+title: Base globe mesh
+status: pending
+owner: assistant
+depends_on:
+  - M1.6
+description: Add GlobeMesh component with dark wireframe/solid sphere representation and optional atmosphere glow.
+acceptance_criteria: |
+  - GlobeMesh renders a sphere at unit scale without z-fighting with grid.
+  - Component integrates cleanly into GlobeCanvas.
+files_touched:
+  - src/scene/GlobeMesh.tsx

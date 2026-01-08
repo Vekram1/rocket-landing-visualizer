@@ -1,0 +1,12 @@
+id: M2.8
+title: Manifest of bundled missions
+status: pending
+owner: assistant
+depends_on:
+  - M2.7
+description: Create missions.json listing bundled datasets with metadata and file references.
+acceptance_criteria: |
+  - public/data/missions.json references sample_shuttle.json (and other samples when added) with names/ids.
+  - Manifest is valid JSON and loads without parse errors.
+files_touched:
+  - public/data/missions.json

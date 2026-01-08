@@ -1,0 +1,12 @@
+id: M1.3
+title: Enable strict TS setup
+status: pending
+owner: assistant
+depends_on:
+  - M1.1
+description: Configure tsconfig.json with strict TypeScript options, JSX settings for React, and path aliases consistent with Vite config.
+acceptance_criteria: |
+  - tsconfig.json has strict type checking enabled and aliases matching vite.config.ts.
+  - `npm run typecheck` passes on scaffolded code.
+files_touched:
+  - tsconfig.json

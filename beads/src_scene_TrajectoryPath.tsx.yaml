@@ -1,0 +1,13 @@
+id: M2.4
+title: Trajectory line component
+status: pending
+owner: assistant
+depends_on:
+  - M1.6
+  - M2.1
+description: Implement trajectory path renderer handling polyline creation and stub anti-meridian handling for future refinement.
+acceptance_criteria: |
+  - TrajectoryPath renders supplied positions with color/width props.
+  - No runtime errors when given empty or minimal datasets.
+files_touched:
+  - src/scene/TrajectoryPath.tsx

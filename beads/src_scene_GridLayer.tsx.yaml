@@ -1,0 +1,12 @@
+id: M2.3
+title: Globe grid rendering
+status: pending
+owner: assistant
+depends_on:
+  - M1.6
+description: Render latitude/longitude grid lines with equator/prime meridian highlights, using Line2 or fallback Lines.
+acceptance_criteria: |
+  - GridLayer component renders grid meshes visible in Canvas without errors.
+  - Grid parameters configurable for spacing and styling.
+files_touched:
+  - src/scene/GridLayer.tsx

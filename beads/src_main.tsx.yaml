@@ -1,0 +1,12 @@
+id: M1.4
+title: Bootstrap app entry
+status: pending
+owner: assistant
+depends_on:
+  - M1.1
+description: Implement main.tsx to render App with global styles, root container, and React strict mode.
+acceptance_criteria: |
+  - src/main.tsx mounts <App /> into #root and imports global styles.
+  - Dev server renders without runtime errors in entry file.
+files_touched:
+  - src/main.tsx

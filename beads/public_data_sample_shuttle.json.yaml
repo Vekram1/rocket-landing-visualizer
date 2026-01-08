@@ -1,0 +1,12 @@
+id: M2.7
+title: Bundled sample dataset
+status: pending
+owner: assistant
+depends_on:
+  - M2.2
+description: Add example telemetry JSON with small, valid samples matching defined types for quick demo.
+acceptance_criteria: |
+  - public/data/sample_shuttle.json exists with valid schema and reasonable values.
+  - Loading the sample does not throw validation errors in future import pipeline.
+files_touched:
+  - public/data/sample_shuttle.json

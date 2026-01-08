@@ -1,0 +1,13 @@
+id: M1.5
+title: App shell + layout
+status: pending
+owner: assistant
+depends_on:
+  - M1.4
+description: Create App component with left panel placeholder and main canvas area, wiring in global providers/stores as stubs.
+acceptance_criteria: |
+  - src/app/App.tsx renders panel + canvas layout matching PLAN dark UI direction.
+  - No lint/type errors introduced by layout.
+files_touched:
+  - src/app/App.tsx
+  - src/app/index.ts (if added)

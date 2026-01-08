@@ -1,0 +1,18 @@
+id: M1.1
+title: Scaffold Vite React+TS app
+status: pending
+owner: assistant
+depends_on: []
+description: Initialize Vite React+TS project and add core scripts plus dependencies (react, react-dom, three, @react-three/fiber, @react-three/drei, zustand) using npm.
+acceptance_criteria: |
+  - package.json exists with Vite React+TS template scripts (dev, build, preview) plus lint/typecheck/test placeholders.
+  - Dependencies installed and lockfile generated with npm.
+  - Project runs `npm run dev` without missing module errors after scaffolding.
+files_touched:
+  - package.json
+  - package-lock.json
+  - index.html
+  - src/main.tsx
+  - src/App.tsx
+  - tsconfig.json
+  - vite.config.ts

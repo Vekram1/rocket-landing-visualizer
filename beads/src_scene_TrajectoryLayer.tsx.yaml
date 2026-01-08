@@ -1,0 +1,12 @@
+id: M2.5
+title: Trajectory manager
+status: pending
+owner: assistant
+depends_on:
+  - M2.4
+description: Manage a list of trajectories, assign colors, and render multiple TrajectoryPath instances with props.
+acceptance_criteria: |
+  - TrajectoryLayer accepts trajectory data array and renders paths without duplicate keys.
+  - Works with sample data in GlobeCanvas integration.
+files_touched:
+  - src/scene/TrajectoryLayer.tsx

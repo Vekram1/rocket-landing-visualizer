@@ -1,0 +1,13 @@
+id: M2.1
+title: Geo helpers baseline
+status: pending
+owner: assistant
+depends_on:
+  - M1.1
+description: Implement geospatial helpers for lat/lon to XYZ conversion and longitude normalization, ready for unit testing.
+acceptance_criteria: |
+  - src/math/geo.ts exports functions for lon wrapping and lat/lon to cartesian conversion with tests or testability in mind.
+  - Typecheck and lint pass with new module.
+files_touched:
+  - src/math/geo.ts
+  - src/math/__tests__/geo.test.ts (if added)

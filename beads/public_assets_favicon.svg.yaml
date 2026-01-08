@@ -1,0 +1,12 @@
+id: M1.8
+title: Add favicon placeholder
+status: pending
+owner: assistant
+depends_on:
+  - M1.1
+description: Provide a simple SVG favicon for the Vite build to prevent missing asset warnings.
+acceptance_criteria: |
+  - public/assets/favicon.svg exists and is referenced by index.html or Vite defaults.
+  - Build does not warn about missing favicon.
+files_touched:
+  - public/assets/favicon.svg

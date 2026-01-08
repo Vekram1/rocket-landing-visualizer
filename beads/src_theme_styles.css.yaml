@@ -1,0 +1,12 @@
+id: M1.7
+title: Global dark theme styles
+status: pending
+owner: assistant
+depends_on:
+  - M1.4
+description: Define base CSS for dark theme, layout grid, and canvas sizing to support panel + viewer layout.
+acceptance_criteria: |
+  - src/theme/styles.css sets dark background, typography, and ensures canvas fills available space.
+  - Styles load without conflicts or missing imports.
+files_touched:
+  - src/theme/styles.css

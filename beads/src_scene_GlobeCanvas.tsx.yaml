@@ -1,0 +1,12 @@
+id: M1.6
+title: R3F canvas scaffold
+status: pending
+owner: assistant
+depends_on:
+  - M1.5
+description: Add GlobeCanvas with @react-three/fiber Canvas, basic lighting, OrbitControls hookup, and placeholder globe mesh.
+acceptance_criteria: |
+  - src/scene/GlobeCanvas.tsx exports a Canvas-wrapped scene with controls.
+  - Rendering succeeds in dev server with placeholder geometry.
+files_touched:
+  - src/scene/GlobeCanvas.tsx

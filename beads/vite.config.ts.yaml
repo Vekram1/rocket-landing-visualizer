@@ -1,0 +1,12 @@
+id: M1.2
+title: Configure Vite & aliases
+status: pending
+owner: assistant
+depends_on:
+  - M1.1
+description: Set up Vite config with React plugin and path aliases for src/*, ensuring static asset base suits SPA deployment.
+acceptance_criteria: |
+  - vite.config.ts includes @vitejs/plugin-react and resolves alias for src paths.
+  - Build command `npm run build` completes using the new config.
+files_touched:
+  - vite.config.ts

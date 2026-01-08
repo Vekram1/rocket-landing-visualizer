@@ -1,0 +1,12 @@
+id: M2.2
+title: Telemetry types
+status: pending
+owner: assistant
+depends_on:
+  - M1.1
+description: Define TypeScript types/interfaces for telemetry samples, datasets, bounds, and styling aligned with PLAN.
+acceptance_criteria: |
+  - src/data/types.ts contains exported types used by data pipeline and rendering layers.
+  - No implicit any; strict mode satisfied.
+files_touched:
+  - src/data/types.ts
