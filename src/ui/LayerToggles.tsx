@@ -7,6 +7,7 @@ const TOGGLES: { key: keyof ReturnType<typeof useUiToggles>; label: string }[] =
   { key: 'showAltitudeTrack', label: 'Altitude track' },
   { key: 'showMercatorInset', label: 'Mercator inset' },
   { key: 'showAltitudeInset', label: 'Altitude chart' },
+  { key: 'showSatelliteTexture', label: 'Satellite view' },
 ]
 
 export function LayerToggles() {

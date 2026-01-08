@@ -36,6 +36,10 @@ export const useUiActions = () => {
   return useStore(useShallow((s) => ({ toggleUi: s.toggleUi })))
 }
 
+export const useSatelliteToggle = () => {
+  return useStore((s) => s.uiToggles.showSatelliteTexture)
+}
+
 export function formatLatLon(lat?: number, lon?: number): string {
   if (lat == null || lon == null || Number.isNaN(lat) || Number.isNaN(lon)) return '—'
   return `${lat.toFixed(3)} / ${lon.toFixed(3)}`

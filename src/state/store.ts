@@ -13,6 +13,7 @@ export type UiToggles = {
   showAltitudeTrack: boolean
   showMercatorInset: boolean
   showAltitudeInset: boolean
+  showSatelliteTexture: boolean
 }
 
 export type StoreState = {
@@ -66,6 +67,7 @@ export const useStore = create<StoreState>((set) => ({
     showAltitudeTrack: true,
     showMercatorInset: true,
     showAltitudeInset: true,
+    showSatelliteTexture: false,
   },
 
   setDatasets: (datasets) => set((state) => ({ datasets, selectedDatasetId: datasets[0]?.id ?? state.selectedDatasetId })),

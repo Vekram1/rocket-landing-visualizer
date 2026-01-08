@@ -1,6 +1,6 @@
 id: M5.3
 title: UI toggle for satellite view
-status: pending
+status: completed
 owner: assistant
 depends_on:
   - M5.2
