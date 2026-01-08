@@ -1,6 +1,6 @@
 id: M5.1
 title: Add satellite texture asset pipeline
-status: pending
+status: completed
 owner: assistant
 depends_on: []
 description: Identify and add satellite imagery source with licensing, optimize/pack texture(s), and make them available under public/assets for globe use.

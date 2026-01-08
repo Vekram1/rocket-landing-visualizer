@@ -1,0 +1,1 @@
+satellite-base.png: placeholder equirect-style texture generated locally (single-color gradient placeholder). License: CC0 (authored in-repo). Replace with real satellite imagery before release.
