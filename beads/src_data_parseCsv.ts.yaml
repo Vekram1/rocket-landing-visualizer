@@ -1,6 +1,6 @@
 id: M3.5
 title: CSV telemetry parser
-status: pending
+status: completed
 owner: assistant
 depends_on:
   - M3.4
