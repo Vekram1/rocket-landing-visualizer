@@ -1,6 +1,6 @@
 id: M4.3
 title: Layer toggles UI
-status: pending
+status: completed
 owner: assistant
 depends_on:
   - M3.1

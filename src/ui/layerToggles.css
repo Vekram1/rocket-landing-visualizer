@@ -1,0 +1,19 @@
+.layer-toggles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.layer-toggles .chip {
+  padding: 8px 10px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.06);
+  color: #e5ecff;
+  cursor: pointer;
+}
+
+.layer-toggles .chip.active {
+  border-color: #7ef3ff;
+  box-shadow: 0 0 12px rgba(126, 243, 255, 0.4);
+}
