@@ -14,6 +14,7 @@ import type { TelemetrySample } from '@/data/types'
 type GlobeCanvasProps = {
   resetSignal?: number
   fitEnabled?: boolean
+  showSatelliteTexture?: boolean
 }
 
 function buildTrajectory(samples: TelemetrySample[]): TrajectorySegment[] {
@@ -38,7 +39,7 @@ function buildTrajectory(samples: TelemetrySample[]): TrajectorySegment[] {
   ]
 }
 
-export function GlobeCanvas({ resetSignal = 0, fitEnabled = true }: GlobeCanvasProps) {
+export function GlobeCanvas({ resetSignal = 0, fitEnabled = true, showSatelliteTexture = false }: GlobeCanvasProps) {
   const controlsRef = useRef<OrbitControlsImpl>(null)
   const samples = useActiveSamples()
 
@@ -66,7 +67,7 @@ export function GlobeCanvas({ resetSignal = 0, fitEnabled = true }: GlobeCanvasP
       <ambientLight intensity={0.35} />
       <directionalLight position={[3, 2, 5]} intensity={0.9} />
       <Suspense fallback={null}>
-        <GlobeMesh />
+        <GlobeMesh useSatelliteTexture={showSatelliteTexture} />
         <GridLayer />
         <TrajectoryLayer trajectories={trajectories} />
         <VehicleMarker position={markerPosition} />

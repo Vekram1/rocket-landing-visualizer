@@ -61,7 +61,11 @@ function App() {
 
         <section className="app-view">
           <div className="canvas-wrap" role="presentation">
-            <GlobeCanvas resetSignal={resetSignal} fitEnabled={fitEnabled} />
+            <GlobeCanvas
+              resetSignal={resetSignal}
+              fitEnabled={fitEnabled}
+              showSatelliteTexture={ui.showSatelliteTexture}
+            />
           </div>
           <div className="view-overlay">
             <div className="view-controls">

@@ -1,6 +1,6 @@
 id: M5.4
 title: Wire satellite toggle into scene
-status: pending
+status: completed
 owner: assistant
 depends_on:
   - M5.3
