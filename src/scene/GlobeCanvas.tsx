@@ -43,7 +43,7 @@ export function GlobeCanvas({ resetSignal = 0, fitEnabled = true }: GlobeCanvasP
   const controlsRef = useRef<OrbitControlsImpl>(null)
   const trajectories = useMemo(() => buildTrajectory(shuttleData), [])
   const markerPosition = useMemo<[number, number, number]>(
-    () => trajectories[0]?.positions.at(-1) ?? [0, 0, 0],
+    () => trajectories[0]?.positions?.at(-1) ?? [0, 0, 0],
     [trajectories],
   )
 

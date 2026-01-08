@@ -1,6 +1,6 @@
 id: M4.14
 title: Trajectory layer enhancements
-status: pending
+status: completed
 owner: assistant
 depends_on:
   - M2.5
