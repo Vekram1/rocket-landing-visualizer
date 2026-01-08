@@ -1,0 +1,16 @@
+id: M5.3
+title: UI toggle for satellite view
+status: pending
+owner: assistant
+depends_on:
+  - M5.2
+description: Add a satellite view toggle to LayerToggles and store state, wiring actions/selectors so the scene can switch materials.
+acceptance_criteria: |
+  - Store includes a boolean flag for satellite view with actions/selectors.
+  - LayerToggles renders a control to flip the flag; default off.
+  - Typecheck passes; UI control visible in panel.
+files_touched:
+  - src/state/store.ts
+  - src/state/selectors.ts
+  - src/ui/LayerToggles.tsx
+  - src/ui/layerToggles.css

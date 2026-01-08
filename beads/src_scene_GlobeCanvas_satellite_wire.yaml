@@ -1,0 +1,15 @@
+id: M5.4
+title: Wire satellite toggle into scene
+status: pending
+owner: assistant
+depends_on:
+  - M5.3
+  - M5.2
+description: Connect the satellite view flag from store/UI into GlobeCanvas/GlobeMesh, ensuring runtime toggle without reload and sensible camera/lighting defaults.
+acceptance_criteria: |
+  - GlobeCanvas/GlobeMesh respond to the satellite toggle and switch materials live.
+  - No runtime errors; typecheck/build pass.
+  - Toggle does not regress fit/reset behavior.
+files_touched:
+  - src/scene/GlobeCanvas.tsx
+  - src/scene/GlobeMesh.tsx

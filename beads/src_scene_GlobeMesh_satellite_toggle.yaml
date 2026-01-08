@@ -1,0 +1,13 @@
+id: M5.2
+title: Globe material toggle (wireframe/satellite)
+status: pending
+owner: assistant
+depends_on:
+  - M5.1
+description: Update GlobeMesh to support switching between the current dark/wireframe look and a satellite-textured material, with sensible lighting and fallback when texture unavailable.
+acceptance_criteria: |
+  - GlobeMesh accepts a prop to enable satellite texture and renders it without z-fighting or lighting artifacts.
+  - Default remains current dark/wireframe look when satellite off or texture missing.
+  - Typecheck/build pass.
+files_touched:
+  - src/scene/GlobeMesh.tsx

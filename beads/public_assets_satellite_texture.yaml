@@ -1,0 +1,13 @@
+id: M5.1
+title: Add satellite texture asset pipeline
+status: pending
+owner: assistant
+depends_on: []
+description: Identify and add satellite imagery source with licensing, optimize/pack texture(s), and make them available under public/assets for globe use.
+acceptance_criteria: |
+  - Satellite base texture (and optional normal/spec maps) added under public/assets with documented source/license.
+  - Texture dimensions and format suitable for web (compressed or reasonably sized).
+  - No build or lint errors from added assets.
+files_touched:
+  - public/assets/satellite-base.(jpg|png|ktx2)
+  - README or comment noting license/source (if added)
