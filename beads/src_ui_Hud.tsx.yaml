@@ -1,6 +1,6 @@
 id: M4.5
 title: HUD display component
-status: pending
+status: completed
 owner: assistant
 depends_on:
   - M3.1
