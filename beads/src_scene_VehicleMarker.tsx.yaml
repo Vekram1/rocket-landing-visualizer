@@ -1,6 +1,6 @@
 id: M2.6
 title: Marker render
-status: pending
+status: completed
 owner: assistant
 depends_on:
   - M2.5
