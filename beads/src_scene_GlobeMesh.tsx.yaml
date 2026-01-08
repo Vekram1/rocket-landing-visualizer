@@ -1,6 +1,6 @@
 id: M2.9
 title: Base globe mesh
-status: pending
+status: completed
 owner: assistant
 depends_on:
   - M1.6
