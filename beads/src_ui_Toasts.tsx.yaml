@@ -1,6 +1,6 @@
 id: M4.6
 title: Toast notifications
-status: pending
+status: completed
 owner: assistant
 depends_on:
   - M3.1
