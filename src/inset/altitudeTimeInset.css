@@ -1,0 +1,29 @@
+.altitude-inset {
+  position: relative;
+  width: 260px;
+  height: 180px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(12, 15, 22, 0.9);
+}
+
+.altitude-inset canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.inset-label {
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  padding: 4px 8px;
+  border-radius: 8px;
+  background: rgba(15, 18, 26, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(229, 236, 255, 0.85);
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
