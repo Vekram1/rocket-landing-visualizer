@@ -1,0 +1,13 @@
+id: M6.4
+title: Consume Blue Marble URL in scene
+status: pending
+owner: assistant
+depends_on:
+  - M6.2
+  - M6.3
+description: Pass the store-provided satelliteTextureUrl into GlobeCanvas/GlobeMesh so Blue Marble is used in satellite mode.
+acceptance_criteria: |
+  - GlobeCanvas reads satelliteTextureUrl from store/selectors and forwards to GlobeMesh.
+  - Satellite toggle uses the configured URL; typecheck/build pass.
+files_touched:
+  - src/scene/GlobeCanvas.tsx

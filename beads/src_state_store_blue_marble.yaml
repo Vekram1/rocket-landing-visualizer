@@ -1,0 +1,14 @@
+id: M6.3
+title: Persist satellite texture URL in store
+status: pending
+owner: assistant
+depends_on:
+  - M6.1
+  - M5.3
+description: Add a store field for satellite texture URL with default pointing to Blue Marble, and expose selectors/actions to change it later.
+acceptance_criteria: |
+  - Store includes satelliteTextureUrl defaulted to the Blue Marble asset.
+  - Selectors/actions exposed for future overrides; typecheck passes.
+files_touched:
+  - src/state/store.ts
+  - src/state/selectors.ts

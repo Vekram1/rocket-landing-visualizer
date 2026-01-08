@@ -1,0 +1,14 @@
+id: M6.2
+title: Wire Blue Marble as default satellite URL
+status: pending
+owner: assistant
+depends_on:
+  - M6.1
+  - M5.2
+description: Point GlobeMesh satellite mode to the new Blue Marble texture by default, keeping fallback behavior if missing.
+acceptance_criteria: |
+  - GlobeMesh uses the Blue Marble texture URL when satellite mode is on.
+  - Fallback remains safe if texture fails to load.
+  - Typecheck/build pass.
+files_touched:
+  - src/scene/GlobeMesh.tsx

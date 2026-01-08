@@ -126,10 +126,11 @@
 - M3: Timeline store + controls; VehicleMarker with interpolation; HUD.
 - M4: File import (JSON/CSV) + validation/normalization; error toasts; local dataset registry.
 - M5 (next): Satellite imagery globe material with a toggle between wireframe/dark and satellite view.
-- M6: Mercator inset (Canvas2D), anti-meridian handling; marker sync; inset toggle.
-- M7: Altitude-time inset; time cursor synced; style polish; fit-to-trajectory.
-- M8: Layer toggles (grid, surface/altitude tracks, overlays), great-circle vs rhumb-line reference.
-- M9: Tauri wrapper prep: build pipeline, dialog API surface, config persistence.
+- M6 (next): Integrate 8k Blue Marble satellite texture (with license note) and wire it as the default satellite URL.
+- M7: Mercator inset (Canvas2D), anti-meridian handling; marker sync; inset toggle.
+- M8: Altitude-time inset; time cursor synced; style polish; fit-to-trajectory.
+- M9: Layer toggles (grid, surface/altitude tracks, overlays), great-circle vs rhumb-line reference.
+- M10: Tauri wrapper prep: build pipeline, dialog API surface, config persistence.
 
 ## 11) Risks, Open Questions, Nice-to-haves
 - Risks: Line2 perf/appearance variance; very large CSV stalls (may need Worker); anti-meridian edge cases.

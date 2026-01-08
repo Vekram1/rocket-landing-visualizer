@@ -1,0 +1,15 @@
+id: M6.1
+title: Add 8k Blue Marble texture with license
+status: pending
+owner: assistant
+depends_on:
+  - M5.1
+  - M5.2
+description: Source an 8k equirect Blue Marble texture (NASA), add to public/assets, and include license/attribution note.
+acceptance_criteria: |
+  - 8k Blue Marble texture added under public/assets with filename noted.
+  - License/attribution recorded (e.g., texture-info.txt updated).
+  - Build succeeds; asset size reasonable or compressed alternative noted.
+files_touched:
+  - public/assets/blue-marble-8k.jpg
+  - public/assets/texture-info.txt
