@@ -20,23 +20,20 @@ export function GlobeMesh({
   textureUrl = DEFAULT_SATELLITE_URL,
 }: GlobeMeshProps) {
   const args = useMemo(() => [radius, 64, 64] as const, [radius])
-  const texture = useSatelliteTexture ? useLoader(TextureLoader, textureUrl) : null
+  const texture = useLoader(TextureLoader, textureUrl || DEFAULT_SATELLITE_URL)
 
   return (
     <group>
       <mesh>
         <sphereGeometry args={args} />
-        {useSatelliteTexture && texture ? (
-          <meshStandardMaterial map={texture} roughness={1} metalness={0} />
-        ) : (
-          <meshStandardMaterial
-            color={surfaceColor}
-            transparent
-            opacity={0.6}
-            roughness={0.9}
-            metalness={0.05}
-          />
-        )}
+        <meshStandardMaterial
+          map={useSatelliteTexture ? texture : null}
+          color={useSatelliteTexture ? undefined : surfaceColor}
+          transparent={!useSatelliteTexture}
+          opacity={useSatelliteTexture ? 1 : 0.6}
+          roughness={useSatelliteTexture ? 1 : 0.9}
+          metalness={useSatelliteTexture ? 0 : 0.05}
+        />
       </mesh>
       <mesh>
         <sphereGeometry args={args} />

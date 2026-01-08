@@ -65,7 +65,7 @@ function App() {
             <GlobeCanvas
               resetSignal={resetSignal}
               fitEnabled={fitEnabled}
-              showSatelliteTexture={ui.showSatelliteTexture}
+              showSatelliteTexture
               satelliteTextureUrl={satelliteTextureUrl}
             />
           </div>

@@ -34,6 +34,9 @@ export type StoreState = {
   setSatelliteTextureUrl: (url: string) => void
 }
 
+
+
+
 const defaultDataset: TelemetryDataset = {
   id: 'sample_shuttle',
   name: 'Sample Shuttle Reentry',
@@ -69,7 +72,7 @@ export const useStore = create<StoreState>((set) => ({
     showAltitudeTrack: true,
     showMercatorInset: true,
     showAltitudeInset: true,
-    showSatelliteTexture: false,
+    showSatelliteTexture: true,
   },
   satelliteTextureUrl: '/assets/blue-marble-8k.jpg',
 

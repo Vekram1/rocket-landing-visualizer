@@ -33,7 +33,12 @@ export const usePlaybackActions = () => {
 }
 
 export const useUiActions = () => {
-  return useStore(useShallow((s) => ({ toggleUi: s.toggleUi, setSatelliteTextureUrl: s.setSatelliteTextureUrl })))
+  return useStore(
+    useShallow((s) => ({
+      toggleUi: s.toggleUi,
+      setSatelliteTextureUrl: s.setSatelliteTextureUrl,
+    })),
+  )
 }
 
 export const useSatelliteToggle = () => {
