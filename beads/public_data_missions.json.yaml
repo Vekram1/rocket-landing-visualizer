@@ -1,6 +1,6 @@
 id: M2.8
 title: Manifest of bundled missions
-status: pending
+status: completed
 owner: assistant
 depends_on:
   - M2.7

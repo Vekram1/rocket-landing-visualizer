@@ -1,0 +1,9 @@
+[
+  {
+    "id": "sample_shuttle",
+    "name": "Sample Shuttle Reentry",
+    "description": "Bundled demo telemetry for globe playback",
+    "file": "/data/sample_shuttle.json",
+    "color": "#7ef3ff"
+  }
+]
