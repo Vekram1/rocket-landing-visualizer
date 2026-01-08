@@ -1,6 +1,6 @@
 id: M3.8
 title: Telemetry validation
-status: pending
+status: completed
 owner: assistant
 depends_on:
   - M3.5
