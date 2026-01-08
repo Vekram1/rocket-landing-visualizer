@@ -25,6 +25,7 @@ export const usePlaybackActions = () => {
     setCurrentTime: s.setCurrentTime,
     resetPlayback: s.resetPlayback,
     selectDataset: s.selectDataset,
+    setDatasets: s.setDatasets,
   }))
 }
 

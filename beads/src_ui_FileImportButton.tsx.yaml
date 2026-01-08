@@ -1,6 +1,6 @@
 id: M4.4
 title: File import trigger
-status: pending
+status: completed
 owner: assistant
 depends_on:
   - M3.4
