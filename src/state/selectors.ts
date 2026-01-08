@@ -33,12 +33,14 @@ export const usePlaybackActions = () => {
 }
 
 export const useUiActions = () => {
-  return useStore(useShallow((s) => ({ toggleUi: s.toggleUi })))
+  return useStore(useShallow((s) => ({ toggleUi: s.toggleUi, setSatelliteTextureUrl: s.setSatelliteTextureUrl })))
 }
 
 export const useSatelliteToggle = () => {
   return useStore((s) => s.uiToggles.showSatelliteTexture)
 }
+
+export const useSatelliteTextureUrl = () => useStore((s) => s.satelliteTextureUrl)
 
 export function formatLatLon(lat?: number, lon?: number): string {
   if (lat == null || lon == null || Number.isNaN(lat) || Number.isNaN(lon)) return '—'

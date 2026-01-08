@@ -21,6 +21,7 @@ export type StoreState = {
   selectedDatasetId?: string
   playState: PlayState
   uiToggles: UiToggles
+  satelliteTextureUrl: string
 
   setDatasets: (datasets: TelemetryDataset[]) => void
   selectDataset: (id: string | undefined) => void
@@ -30,6 +31,7 @@ export type StoreState = {
   setCurrentTime: (t: number) => void
   toggleUi: (key: keyof UiToggles) => void
   resetPlayback: () => void
+  setSatelliteTextureUrl: (url: string) => void
 }
 
 const defaultDataset: TelemetryDataset = {
@@ -69,6 +71,7 @@ export const useStore = create<StoreState>((set) => ({
     showAltitudeInset: true,
     showSatelliteTexture: false,
   },
+  satelliteTextureUrl: '/assets/blue-marble-8k.jpg',
 
   setDatasets: (datasets) => set((state) => ({ datasets, selectedDatasetId: datasets[0]?.id ?? state.selectedDatasetId })),
   selectDataset: (id) => set(() => ({ selectedDatasetId: id })),
@@ -77,6 +80,7 @@ export const useStore = create<StoreState>((set) => ({
   setSpeed: (speed) => set((state) => ({ playState: { ...state.playState, speed } })),
   setCurrentTime: (t) => set((state) => ({ playState: { ...state.playState, currentTime: t } })),
   toggleUi: (key) => set((state) => ({ uiToggles: { ...state.uiToggles, [key]: !state.uiToggles[key] } })),
+  setSatelliteTextureUrl: (url) => set(() => ({ satelliteTextureUrl: url })),
   resetPlayback: () =>
     set((state) => ({
       playState: {

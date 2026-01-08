@@ -1,6 +1,6 @@
 id: M6.3
 title: Persist satellite texture URL in store
-status: pending
+status: completed
 owner: assistant
 depends_on:
   - M6.1
