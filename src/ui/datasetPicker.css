@@ -1,0 +1,47 @@
+.dataset-picker {
+  display: grid;
+  gap: 10px;
+}
+
+.dataset-card {
+  width: 100%;
+  text-align: left;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.04);
+  padding: 12px 14px;
+  color: #e5ecff;
+  cursor: pointer;
+  display: grid;
+  gap: 6px;
+}
+
+.dataset-card.active {
+  border-color: #7ef3ff;
+  box-shadow: 0 0 12px rgba(126, 243, 255, 0.4);
+}
+
+.dataset-name {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.dataset-desc {
+  color: rgba(229, 236, 255, 0.75);
+  font-size: 13px;
+}
+
+.dataset-meta {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.pill.subtle {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.dataset-picker.empty {
+  color: rgba(229, 236, 255, 0.7);
+}

@@ -1,0 +1,58 @@
+.timeline-wrap {
+  display: grid;
+  gap: 12px;
+}
+
+.timeline-row {
+  display: flex;
+  gap: 8px;
+}
+
+.timeline-btn {
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+  color: #e5ecff;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.timeline-btn.ghost {
+  background: transparent;
+  border-style: dashed;
+}
+
+.timeline-slider {
+  display: grid;
+  gap: 8px;
+}
+
+.timeline-label {
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: rgba(229, 236, 255, 0.72);
+}
+
+.timeline-slider input[type='range'] {
+  width: 100%;
+  accent-color: #7ef3ff;
+}
+
+.timeline-times {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: rgba(229, 236, 255, 0.72);
+}
+
+.timeline-speeds {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.chip.active {
+  border-color: #7ef3ff;
+  box-shadow: 0 0 12px rgba(126, 243, 255, 0.4);
+}
