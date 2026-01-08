@@ -1,6 +1,6 @@
 id: M3.9
 title: Interpolation utilities
-status: pending
+status: completed
 owner: assistant
 depends_on:
   - M2.1
