@@ -1,6 +1,6 @@
 id: M1.7
 title: Global dark theme styles
-status: pending
+status: completed
 owner: assistant
 depends_on:
   - M1.4

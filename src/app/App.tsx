@@ -1,3 +1,4 @@
+import GlobeCanvas from '@/scene/GlobeCanvas'
 import './app.css'
 
 function App() {
@@ -62,7 +63,9 @@ function App() {
         </aside>
 
         <section className="app-view">
-          <div className="view-hint">Scene placeholder — R3F globe goes here</div>
+          <div className="canvas-wrap" role="presentation">
+            <GlobeCanvas />
+          </div>
           <div className="view-overlay">
             <div className="hud">
               <div className="hud-block">

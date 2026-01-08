@@ -158,13 +158,29 @@ You are done reading the rules—execute carefully and document changes.
 1. **File issues for remaining work** - Create issues for anything that needs follow-up
 2. **Run quality gates** (if code changed) - Tests, linters, builds
 3. **Update issue status** - Close finished work, update in-progress items
-4. **PUSH TO REMOTE** - This is MANDATORY:
-   ```bash
-   git pull --rebase
-   bd sync
-   git push
-   git status  # MUST show "up to date with origin"
-   ```
+When you believe a bead is complete:
+
+   1. Ensure your changes are consistent with PLAN.md and AGENTS.md.
+   2. Update the corresponding bead YAML:
+      - Set `status: done`.
+      - Add any relevant notes if needed.
+   3. In your reply, ALWAYS include:
+      - A short summary of what you changed.
+      - A suggested commit message.
+      - The exact git commands the human should run, for example:
+
+      - Run tests/linters/build as appropriate.
+      - Then:
+
+         git add .
+         git commit -m "<suggested message>"
+         git pull --rebase
+         bd sync
+         git push
+         git status
+
+Agents MUST NOT assume they can run these commands themselves; they only propose them.
+
 5. **Clean up** - Clear stashes, prune remote branches
 6. **Verify** - All changes committed AND pushed
 7. **Hand off** - Provide context for next session
