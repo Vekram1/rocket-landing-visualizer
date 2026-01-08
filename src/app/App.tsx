@@ -1,11 +1,36 @@
+import { useCallback, useEffect, useState } from 'react'
 import GlobeCanvas from '@/scene/GlobeCanvas'
+import Panel from '@/ui/Panel'
+import Hud from '@/ui/Hud'
+import Toasts from '@/ui/Toasts'
+import { usePlaybackClock } from '@/state/hooks/usePlaybackClock'
+import { useUiToggles, usePlaybackActions } from '@/state/selectors'
+import MercatorInset from '@/inset/MercatorInset'
+import AltitudeTimeInset from '@/inset/AltitudeTimeInset'
+import loadBundledMissions from '@/data/loadBundledMissions'
 import './app.css'
-
-import { useCallback, useState } from 'react'
 
 function App() {
   const [resetSignal, setResetSignal] = useState(0)
   const [fitEnabled, setFitEnabled] = useState(true)
+  const ui = useUiToggles()
+  const { setDatasets, selectDataset } = usePlaybackActions()
+
+  usePlaybackClock()
+
+  useEffect(() => {
+    loadBundledMissions()
+      .then((data) => {
+        if (data.length) {
+          setDatasets(data)
+          selectDataset(data[0].id)
+        }
+      })
+      .catch(() => {
+        /* ignore fetch failures; fallback to default store dataset */
+      })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   const handleResetView = useCallback(() => {
     setResetSignal((n) => n + 1)
@@ -32,81 +57,33 @@ function App() {
       </header>
 
       <main className="app-main">
-        <aside className="app-panel">
-          <section className="panel-section">
-            <p className="section-kicker">Mission control</p>
-            <h2 className="section-title">Telemetry datasets</h2>
-            <div className="section-body">
-              <button className="action">Select bundled mission</button>
-              <button className="action ghost">Import CSV / JSON</button>
-              <ul className="list">
-                <li className="list-item">Sample shuttle (demo)</li>
-                <li className="list-item">Local imports (empty)</li>
-              </ul>
-            </div>
-          </section>
-
-          <section className="panel-section">
-            <p className="section-kicker">Playback</p>
-            <h2 className="section-title">Timeline + speed</h2>
-            <div className="section-body timeline">
-              <div className="slider" aria-hidden />
-              <div className="timeline-stats">
-                <span>t = 00:00</span>
-                <span>speed = 1x</span>
-              </div>
-              <div className="controls">
-                <button className="chip">Play</button>
-                <button className="chip">Pause</button>
-                <button className="chip" onClick={handleResetView}>
-                  Reset view
-                </button>
-                <button className={`chip ${fitEnabled ? 'active' : ''}`} onClick={toggleFit}>
-                  {fitEnabled ? 'Disable fit' : 'Enable fit'}
-                </button>
-              </div>
-            </div>
-          </section>
-
-          <section className="panel-section">
-            <p className="section-kicker">Layers</p>
-            <h2 className="section-title">Overlays</h2>
-            <div className="chips">
-              <button className="chip">Grid</button>
-              <button className="chip">Surface track</button>
-              <button className="chip">Altitude track</button>
-              <button className="chip">Mercator inset</button>
-              <button className="chip">Altitude chart</button>
-            </div>
-          </section>
-        </aside>
+        <Panel />
 
         <section className="app-view">
           <div className="canvas-wrap" role="presentation">
             <GlobeCanvas resetSignal={resetSignal} fitEnabled={fitEnabled} />
           </div>
           <div className="view-overlay">
-            <div className="hud">
-              <div className="hud-block">
-                <p className="hud-label">Lat / Lon</p>
-                <p className="hud-value">0.000 / 0.000</p>
-              </div>
-              <div className="hud-block">
-                <p className="hud-label">Altitude</p>
-                <p className="hud-value">0.0 km</p>
-              </div>
-              <div className="hud-block">
-                <p className="hud-label">Speed</p>
-                <p className="hud-value">—</p>
-              </div>
-              <div className="hud-block">
-                <p className="hud-label">Time</p>
-                <p className="hud-value">00:00</p>
-              </div>
+            <div className="view-controls">
+              <button className="chip" onClick={handleResetView}>
+                Reset view
+              </button>
+              <button className={`chip ${fitEnabled ? 'active' : ''}`} onClick={toggleFit}>
+                {fitEnabled ? 'Disable fit' : 'Enable fit'}
+              </button>
+            </div>
+
+            <Hud />
+
+            <div className="inset-stack">
+              {ui.showMercatorInset && <MercatorInset />}
+              {ui.showAltitudeInset && <AltitudeTimeInset />}
             </div>
           </div>
         </section>
       </main>
+
+      <Toasts />
     </div>
   )
 }

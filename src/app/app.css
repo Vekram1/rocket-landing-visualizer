@@ -53,6 +53,7 @@
   grid-template-columns: minmax(270px, 360px) 1fr;
   gap: 1px;
   background: rgba(255, 255, 255, 0.04);
+  min-height: calc(100vh - 120px);
 }
 
 .app-panel {
@@ -172,6 +173,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 70vh;
 }
 
 .canvas-wrap {
@@ -190,42 +192,35 @@
   pointer-events: none;
 }
 
+.view-controls {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  gap: 8px;
+  pointer-events: auto;
+}
+
+.view-overlay .chip.active {
+  border-color: #7ef3ff;
+  box-shadow: 0 0 12px rgba(126, 243, 255, 0.4);
+}
+
 .view-hint {
   color: rgba(229, 236, 255, 0.6);
   font-size: 14px;
   letter-spacing: 0.02em;
 }
 
-.hud {
+
+
+.inset-stack {
   position: absolute;
   bottom: 16px;
-  left: 16px;
-  padding: 12px;
-  border-radius: 12px;
-  background: rgba(15, 18, 26, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  right: 16px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 10px;
-  max-width: min(720px, 90vw);
-}
-
-.hud-block {
-  display: flex;
-  flex-direction: column;
-}
-
-.hud-label {
-  margin: 0 0 4px;
-  font-size: 11px;
-  letter-spacing: 0.05em;
-  color: rgba(229, 236, 255, 0.6);
-  text-transform: uppercase;
-}
-
-.hud-value {
-  margin: 0;
-  font-weight: 700;
+  gap: 12px;
+  pointer-events: auto;
 }
 
 @media (max-width: 900px) {

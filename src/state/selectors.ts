@@ -1,4 +1,5 @@
 import { useStore } from './store'
+import { useShallow } from 'zustand/react/shallow'
 import type { TelemetryDataset, TelemetrySample } from '@/data/types'
 
 export const useDatasets = () => useStore((s) => s.datasets)
@@ -18,19 +19,21 @@ export const useActiveSamples = (): TelemetrySample[] => {
 }
 
 export const usePlaybackActions = () => {
-  return useStore((s) => ({
-    play: s.play,
-    pause: s.pause,
-    setSpeed: s.setSpeed,
-    setCurrentTime: s.setCurrentTime,
-    resetPlayback: s.resetPlayback,
-    selectDataset: s.selectDataset,
-    setDatasets: s.setDatasets,
-  }))
+  return useStore(
+    useShallow((s) => ({
+      play: s.play,
+      pause: s.pause,
+      setSpeed: s.setSpeed,
+      setCurrentTime: s.setCurrentTime,
+      resetPlayback: s.resetPlayback,
+      selectDataset: s.selectDataset,
+      setDatasets: s.setDatasets,
+    })),
+  )
 }
 
 export const useUiActions = () => {
-  return useStore((s) => ({ toggleUi: s.toggleUi }))
+  return useStore(useShallow((s) => ({ toggleUi: s.toggleUi })))
 }
 
 export function formatLatLon(lat?: number, lon?: number): string {

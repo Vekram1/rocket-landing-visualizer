@@ -7,19 +7,18 @@ import TrajectoryLayer from './TrajectoryLayer'
 import VehicleMarker from './VehicleMarker'
 import CameraRig from './CameraRig'
 import Controls from './Controls'
+import { useActiveSamples } from '@/state/selectors'
 import type { TrajectorySegment } from './TrajectoryLayer'
-import type { TelemetryDataset } from '@/data/types'
-
-const shuttleData = (await import('../../public/data/sample_shuttle.json')).default as TelemetryDataset
+import type { TelemetrySample } from '@/data/types'
 
 type GlobeCanvasProps = {
   resetSignal?: number
   fitEnabled?: boolean
 }
 
-function buildTrajectory(dataset: TelemetryDataset): TrajectorySegment[] {
-  if (!dataset.samples?.length) return []
-  const positions: [number, number, number][] = dataset.samples.map((s) => {
+function buildTrajectory(samples: TelemetrySample[]): TrajectorySegment[] {
+  if (!samples.length) return []
+  const positions: [number, number, number][] = samples.map((s) => {
     const phi = (90 - s.latDeg) * (Math.PI / 180)
     const theta = s.lonDeg * (Math.PI / 180)
     const x = Math.sin(phi) * Math.cos(theta)
@@ -31,9 +30,9 @@ function buildTrajectory(dataset: TelemetryDataset): TrajectorySegment[] {
 
   return [
     {
-      id: dataset.id,
+      id: 'active-trajectory',
       positions,
-      color: dataset.style?.color ?? '#7ef3ff',
+      color: '#7ef3ff',
       width: 2,
     },
   ]
@@ -41,7 +40,9 @@ function buildTrajectory(dataset: TelemetryDataset): TrajectorySegment[] {
 
 export function GlobeCanvas({ resetSignal = 0, fitEnabled = true }: GlobeCanvasProps) {
   const controlsRef = useRef<OrbitControlsImpl>(null)
-  const trajectories = useMemo(() => buildTrajectory(shuttleData), [])
+  const samples = useActiveSamples()
+
+  const trajectories = useMemo(() => buildTrajectory(samples), [samples])
   const markerPosition = useMemo<[number, number, number]>(
     () => trajectories[0]?.positions?.at(-1) ?? [0, 0, 0],
     [trajectories],
@@ -69,8 +70,8 @@ export function GlobeCanvas({ resetSignal = 0, fitEnabled = true }: GlobeCanvasP
         <GridLayer />
         <TrajectoryLayer trajectories={trajectories} />
         <VehicleMarker position={markerPosition} />
-        {fitEnabled && (
-          <CameraRig samples={shuttleData.samples} controlsRef={controlsRef} resetSignal={resetSignal} />
+        {fitEnabled && samples.length > 0 && (
+          <CameraRig samples={samples} controlsRef={controlsRef} resetSignal={resetSignal} />
         )}
       </Suspense>
       <Controls ref={controlsRef} />

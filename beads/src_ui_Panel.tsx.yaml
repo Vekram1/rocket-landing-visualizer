@@ -1,6 +1,6 @@
 id: M4.16
 title: Panel layout integration
-status: pending
+status: completed
 owner: assistant
 depends_on:
   - M4.1
