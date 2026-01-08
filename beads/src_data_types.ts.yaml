@@ -1,6 +1,6 @@
 id: M2.2
 title: Telemetry types
-status: pending
+status: completed
 owner: assistant
 depends_on:
   - M1.1
