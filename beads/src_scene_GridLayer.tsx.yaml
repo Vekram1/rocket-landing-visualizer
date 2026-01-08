@@ -1,6 +1,6 @@
 id: M2.3
 title: Globe grid rendering
-status: pending
+status: completed
 owner: assistant
 depends_on:
   - M1.6
