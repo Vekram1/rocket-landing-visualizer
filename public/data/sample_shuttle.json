@@ -15,6 +15,6 @@
     { "t": 210, "latDeg": 36.1, "lonDeg": -65.5, "altMeters": 21000 },
     { "t": 240, "latDeg": 36.4, "lonDeg": -63.0, "altMeters": 12000 },
     { "t": 270, "latDeg": 36.6, "lonDeg": -61.2, "altMeters": 7000 },
-    { "t": 300, "latDeg": 36.8, "lonDeg": -60.0, "altMeters": 0 }
+    { "t": 300, "latDeg": 28.5744, "lonDeg": -80.6520, "altMeters": 0 }
   ]
 }

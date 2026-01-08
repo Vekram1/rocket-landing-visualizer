@@ -6,6 +6,7 @@ import GlobeMesh from './GlobeMesh'
 import GridLayer from './GridLayer'
 import TrajectoryLayer from './TrajectoryLayer'
 import VehicleMarker from './VehicleMarker'
+import CameraRig from './CameraRig'
 import type { TrajectorySegment } from './TrajectoryLayer'
 import type { TelemetryDataset } from '@/data/types'
 
@@ -13,6 +14,7 @@ const shuttleData = (await import('../../public/data/sample_shuttle.json')).defa
 
 type GlobeCanvasProps = {
   resetSignal?: number
+  fitEnabled?: boolean
 }
 
 function buildTrajectory(dataset: TelemetryDataset): TrajectorySegment[] {
@@ -37,7 +39,7 @@ function buildTrajectory(dataset: TelemetryDataset): TrajectorySegment[] {
   ]
 }
 
-export function GlobeCanvas({ resetSignal = 0 }: GlobeCanvasProps) {
+export function GlobeCanvas({ resetSignal = 0, fitEnabled = true }: GlobeCanvasProps) {
   const controlsRef = useRef<OrbitControlsImpl>(null)
   const trajectories = useMemo(() => buildTrajectory(shuttleData), [])
   const markerPosition = useMemo<[number, number, number]>(
@@ -67,6 +69,9 @@ export function GlobeCanvas({ resetSignal = 0 }: GlobeCanvasProps) {
         <GridLayer />
         <TrajectoryLayer trajectories={trajectories} />
         <VehicleMarker position={markerPosition} />
+        {fitEnabled && (
+          <CameraRig samples={shuttleData.samples} controlsRef={controlsRef} resetSignal={resetSignal} />
+        )}
       </Suspense>
       <OrbitControls
         ref={controlsRef}

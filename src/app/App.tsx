@@ -5,8 +5,14 @@ import { useCallback, useState } from 'react'
 
 function App() {
   const [resetSignal, setResetSignal] = useState(0)
+  const [fitEnabled, setFitEnabled] = useState(true)
 
   const handleResetView = useCallback(() => {
+    setResetSignal((n) => n + 1)
+  }, [])
+
+  const toggleFit = useCallback(() => {
+    setFitEnabled((v) => !v)
     setResetSignal((n) => n + 1)
   }, [])
 
@@ -55,6 +61,9 @@ function App() {
                 <button className="chip" onClick={handleResetView}>
                   Reset view
                 </button>
+                <button className={`chip ${fitEnabled ? 'active' : ''}`} onClick={toggleFit}>
+                  {fitEnabled ? 'Disable fit' : 'Enable fit'}
+                </button>
               </div>
             </div>
           </section>
@@ -74,7 +83,7 @@ function App() {
 
         <section className="app-view">
           <div className="canvas-wrap" role="presentation">
-            <GlobeCanvas resetSignal={resetSignal} />
+            <GlobeCanvas resetSignal={resetSignal} fitEnabled={fitEnabled} />
           </div>
           <div className="view-overlay">
             <div className="hud">
