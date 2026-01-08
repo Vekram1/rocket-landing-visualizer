@@ -4,7 +4,7 @@ import Panel from '@/ui/Panel'
 import Hud from '@/ui/Hud'
 import Toasts from '@/ui/Toasts'
 import { usePlaybackClock } from '@/state/hooks/usePlaybackClock'
-import { useUiToggles, usePlaybackActions } from '@/state/selectors'
+import { useUiToggles, usePlaybackActions, useSatelliteTextureUrl } from '@/state/selectors'
 import MercatorInset from '@/inset/MercatorInset'
 import AltitudeTimeInset from '@/inset/AltitudeTimeInset'
 import loadBundledMissions from '@/data/loadBundledMissions'
@@ -14,6 +14,7 @@ function App() {
   const [resetSignal, setResetSignal] = useState(0)
   const [fitEnabled, setFitEnabled] = useState(true)
   const ui = useUiToggles()
+  const satelliteTextureUrl = useSatelliteTextureUrl()
   const { setDatasets, selectDataset } = usePlaybackActions()
 
   usePlaybackClock()
@@ -65,6 +66,7 @@ function App() {
               resetSignal={resetSignal}
               fitEnabled={fitEnabled}
               showSatelliteTexture={ui.showSatelliteTexture}
+              satelliteTextureUrl={satelliteTextureUrl}
             />
           </div>
           <div className="view-overlay">

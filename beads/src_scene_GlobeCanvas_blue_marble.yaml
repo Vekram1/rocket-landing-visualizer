@@ -1,6 +1,6 @@
 id: M6.4
 title: Consume Blue Marble URL in scene
-status: pending
+status: completed
 owner: assistant
 depends_on:
   - M6.2
