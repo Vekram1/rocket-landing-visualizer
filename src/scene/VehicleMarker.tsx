@@ -1,19 +1,33 @@
 import { useMemo } from 'react'
-import { Sphere } from '@react-three/drei'
+import { Line, Sphere } from '@react-three/drei'
+
+export type Triplet = [number, number, number]
 
 export type VehicleMarkerProps = {
-  position?: [number, number, number]
+  position?: Triplet
   color?: string
   radius?: number
+  trail?: Triplet[]
+  trailWidth?: number
 }
 
-export function VehicleMarker({ position = [0, 0, 0], color = '#7ef3ff', radius = 0.025 }: VehicleMarkerProps) {
+export function VehicleMarker({
+  position = [0, 0, 0],
+  color = '#7ef3ff',
+  radius = 0.025,
+  trail,
+  trailWidth = 1,
+}: VehicleMarkerProps) {
   const pos = useMemo(() => position, [position])
+  const trailPoints = useMemo(() => trail ?? [], [trail])
 
   return (
-    <Sphere args={[radius, 24, 24]} position={pos}>
-      <meshStandardMaterial emissive={color} color={color} emissiveIntensity={1.2} />
-    </Sphere>
+    <group>
+      {trailPoints.length > 1 && <Line points={trailPoints} color={color} lineWidth={trailWidth} dashed={false} />}
+      <Sphere args={[radius, 24, 24]} position={pos}>
+        <meshStandardMaterial emissive={color} color={color} emissiveIntensity={1.3} />
+      </Sphere>
+    </group>
   )
 }
 
