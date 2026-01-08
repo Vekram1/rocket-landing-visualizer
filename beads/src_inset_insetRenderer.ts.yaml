@@ -1,6 +1,6 @@
 id: M4.10
 title: Inset renderer utilities
-status: pending
+status: completed
 owner: assistant
 depends_on:
   - M4.9
