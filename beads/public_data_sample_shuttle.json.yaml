@@ -1,6 +1,6 @@
 id: M2.7
 title: Bundled sample dataset
-status: pending
+status: completed
 owner: assistant
 depends_on:
   - M2.2
