@@ -1,6 +1,6 @@
 id: M5.2
 title: Globe material toggle (wireframe/satellite)
-status: pending
+status: completed
 owner: assistant
 depends_on:
   - M5.1
