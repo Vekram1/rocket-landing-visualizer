@@ -1,7 +1,15 @@
 import GlobeCanvas from '@/scene/GlobeCanvas'
 import './app.css'
 
+import { useCallback, useState } from 'react'
+
 function App() {
+  const [resetSignal, setResetSignal] = useState(0)
+
+  const handleResetView = useCallback(() => {
+    setResetSignal((n) => n + 1)
+  }, [])
+
   return (
     <div className="app-shell">
       <header className="app-header">
@@ -44,7 +52,9 @@ function App() {
               <div className="controls">
                 <button className="chip">Play</button>
                 <button className="chip">Pause</button>
-                <button className="chip">Reset view</button>
+                <button className="chip" onClick={handleResetView}>
+                  Reset view
+                </button>
               </div>
             </div>
           </section>
@@ -64,7 +74,7 @@ function App() {
 
         <section className="app-view">
           <div className="canvas-wrap" role="presentation">
-            <GlobeCanvas />
+            <GlobeCanvas resetSignal={resetSignal} />
           </div>
           <div className="view-overlay">
             <div className="hud">

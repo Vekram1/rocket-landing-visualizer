@@ -1,0 +1,13 @@
+id: M4.7
+title: Camera rig helpers
+status: pending
+owner: assistant
+depends_on:
+  - M3.10
+  - M2.10
+description: Implement CameraRig component/functions to fit camera to trajectory bounds and provide reset/fit actions.
+acceptance_criteria: |
+  - src/scene/CameraRig.tsx exposes helpers to position camera based on computed bounds.
+  - Integrates cleanly with OrbitControls and store actions; typecheck passes.
+files_touched:
+  - src/scene/CameraRig.tsx

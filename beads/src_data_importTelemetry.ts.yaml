@@ -1,0 +1,12 @@
+id: M3.4
+title: Import router for telemetry files
+status: pending
+owner: assistant
+depends_on:
+  - M3.3
+description: Add importTelemetry to accept File/Blob, detect CSV vs JSON, invoke parsers, normalize/validate, and return datasets ready for store.
+acceptance_criteria: |
+  - src/data/importTelemetry.ts exposes async function handling CSV/JSON detection and error surfaces with line info when available.
+  - Returns TelemetryDataset aligned with types; unit-testable separation of parse and normalize steps.
+files_touched:
+  - src/data/importTelemetry.ts

@@ -1,0 +1,14 @@
+id: M3.3
+title: Bundled missions loader
+status: pending
+owner: assistant
+depends_on:
+  - M2.7
+  - M2.8
+description: Implement loadBundledMissions to fetch missions.json, load referenced telemetry files, and return typed datasets with defaults.
+acceptance_criteria: |
+  - src/data/loadBundledMissions.ts reads /public/data/missions.json and returns parsed datasets with ids/names and samples.
+  - Handles fetch errors with descriptive messages; typecheck passes.
+files_touched:
+  - src/data/loadBundledMissions.ts
+  - public/data/missions.json

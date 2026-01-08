@@ -1,0 +1,14 @@
+id: M4.17
+title: Playback clock hook
+status: pending
+owner: assistant
+depends_on:
+  - M3.1
+  - M3.9
+description: Implement usePlaybackClock hook using requestAnimationFrame to advance current time respecting play/pause and speed controls.
+acceptance_criteria: |
+  - src/state/hooks/usePlaybackClock.ts updates store currentTime with rAF and stops on pause/end.
+  - Typecheck passes; hook is side-effect safe and cleaned up on unmount.
+files_touched:
+  - src/state/hooks/usePlaybackClock.ts
+  - src/state/hooks/__tests__/usePlaybackClock.test.ts (if added)

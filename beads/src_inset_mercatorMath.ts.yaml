@@ -1,0 +1,13 @@
+id: M4.9
+title: Mercator math helpers
+status: pending
+owner: assistant
+depends_on:
+  - M2.1
+description: Implement mercatorMath.ts to convert lat/lon to mercator coordinates, handling clamping near poles and anti-meridian splits.
+acceptance_criteria: |
+  - src/inset/mercatorMath.ts exports projection helpers with safe clamping and tests for edge cases.
+  - Typecheck passes.
+files_touched:
+  - src/inset/mercatorMath.ts
+  - src/inset/__tests__/mercatorMath.test.ts (if added)

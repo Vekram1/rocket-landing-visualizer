@@ -1,0 +1,13 @@
+id: M4.6
+title: Toast notifications
+status: pending
+owner: assistant
+depends_on:
+  - M3.1
+description: Add Toasts component/system for surfacing import/validation errors and info messages.
+acceptance_criteria: |
+  - src/ui/Toasts.tsx (and any supporting store/util) can enqueue/dismiss toasts with variants.
+  - Typecheck passes; basic styling scaffolded.
+files_touched:
+  - src/ui/Toasts.tsx
+  - src/ui/toasts.css (if added)

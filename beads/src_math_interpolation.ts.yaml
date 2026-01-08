@@ -1,0 +1,13 @@
+id: M3.9
+title: Interpolation utilities
+status: pending
+owner: assistant
+depends_on:
+  - M2.1
+description: Implement interpolation.ts for time-based linear interpolation of telemetry samples and helper to find segment by time.
+acceptance_criteria: |
+  - src/math/interpolation.ts exports functions to find bracketing samples and interpolate positions/altitude safely.
+  - Typecheck passes; optional unit tests for boundary conditions.
+files_touched:
+  - src/math/interpolation.ts
+  - src/math/__tests__/interpolation.test.ts (if added)

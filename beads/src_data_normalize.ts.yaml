@@ -1,0 +1,16 @@
+id: M3.7
+title: Telemetry normalization
+status: pending
+owner: assistant
+depends_on:
+  - M3.5
+  - M3.6
+  - M2.1
+  - M2.2
+description: Add normalize.ts to clamp ranges, fill defaults, compute bounds, and generate precomputed position/mercator/altitude buffers with exaggeration tuning.
+acceptance_criteria: |
+  - src/data/normalize.ts outputs normalized dataset with computed bounds and buffers; handles lon wrapping consistently.
+  - Includes unit-testable helper functions; typecheck passes.
+files_touched:
+  - src/data/normalize.ts
+  - src/data/__tests__/normalize.test.ts (if added)

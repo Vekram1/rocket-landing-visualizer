@@ -1,0 +1,15 @@
+id: M4.11
+title: Mercator inset component
+status: pending
+owner: assistant
+depends_on:
+  - M4.9
+  - M4.10
+  - M3.1
+description: Build MercatorInset component rendering Canvas2D mini-map with trajectory, marker, and grid overlays synced to playback time.
+acceptance_criteria: |
+  - src/inset/MercatorInset.tsx renders a canvas and uses insetRenderer to draw mercator view based on store state.
+  - Handles anti-meridian splits and updates on playback changes; typecheck passes.
+files_touched:
+  - src/inset/MercatorInset.tsx
+  - src/inset/mercatorInset.css (if added)

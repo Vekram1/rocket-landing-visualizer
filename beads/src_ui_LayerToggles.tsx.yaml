@@ -1,0 +1,14 @@
+id: M4.3
+title: Layer toggles UI
+status: pending
+owner: assistant
+depends_on:
+  - M3.1
+  - M3.2
+description: Implement LayerToggles component to toggle grid, surface track, altitude track, Mercator inset, and altitude chart flags in store.
+acceptance_criteria: |
+  - src/ui/LayerToggles.tsx renders toggle controls bound to store state/actions.
+  - Accessible buttons/inputs; typechecked.
+files_touched:
+  - src/ui/LayerToggles.tsx
+  - src/ui/layerToggles.css (if added)

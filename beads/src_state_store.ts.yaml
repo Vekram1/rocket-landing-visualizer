@@ -1,0 +1,14 @@
+id: M3.1
+title: Zustand store for datasets/playback
+status: completed
+owner: assistant
+depends_on:
+  - M1.5
+  - M2.10
+description: Create Zustand store managing datasets, selected dataset, playback state (play/pause, speed, currentTime), and UI toggles aligned with PLAN.
+acceptance_criteria: |
+  - src/state/store.ts initializes Zustand store with types for datasets and playback.
+  - Default state uses bundled sample and exposes actions to load datasets, play/pause, scrub, change speed, and toggle layers.
+  - Typecheck passes without implicit anys.
+files_touched:
+  - src/state/store.ts

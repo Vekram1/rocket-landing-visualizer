@@ -1,0 +1,14 @@
+id: M4.4
+title: File import trigger
+status: pending
+owner: assistant
+depends_on:
+  - M3.4
+  - M3.1
+description: Add FileImportButton to accept CSV/JSON uploads, call importTelemetry, handle errors with toasts, and store the new dataset.
+acceptance_criteria: |
+  - src/ui/FileImportButton.tsx opens file input, calls importTelemetry, and pushes dataset into store on success.
+  - Error cases surface user-friendly messages; typecheck passes.
+files_touched:
+  - src/ui/FileImportButton.tsx
+  - src/ui/fileImportButton.css (if added)

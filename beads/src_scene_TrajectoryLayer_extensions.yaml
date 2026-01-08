@@ -1,0 +1,13 @@
+id: M4.14
+title: Trajectory layer enhancements
+status: pending
+owner: assistant
+depends_on:
+  - M2.5
+  - M3.7
+description: Enhance TrajectoryLayer to split anti-meridian crossings, support surface vs altitude tracks, and accept normalized buffers.
+acceptance_criteria: |
+  - src/scene/TrajectoryLayer.tsx can render surface-only tracks and altitude-exaggerated paths with anti-meridian-aware segmentation.
+  - Typecheck passes and integrates with normalized data structures.
+files_touched:
+  - src/scene/TrajectoryLayer.tsx

@@ -1,0 +1,14 @@
+id: M4.5
+title: HUD display component
+status: pending
+owner: assistant
+depends_on:
+  - M3.1
+  - M3.2
+description: Create Hud component showing lat/lon, altitude, speed, and time from store/derived selectors.
+acceptance_criteria: |
+  - src/ui/Hud.tsx renders key telemetry readouts with fallbacks and formatting.
+  - Typecheck passes and component is layout-ready for overlay use.
+files_touched:
+  - src/ui/Hud.tsx
+  - src/ui/hud.css (if added)

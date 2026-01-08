@@ -1,0 +1,13 @@
+id: M3.5
+title: CSV telemetry parser
+status: pending
+owner: assistant
+depends_on:
+  - M3.4
+description: Implement parseCsv to read CSV with aliases for time/lat/lon/alt, trim headers, and return TelemetrySample[] with line-numbered errors.
+acceptance_criteria: |
+  - src/data/parseCsv.ts parses headers and rows, supports common aliases, and returns structured samples or throws typed errors with line context.
+  - Handles missing required fields gracefully; typecheck passes.
+files_touched:
+  - src/data/parseCsv.ts
+  - src/data/__tests__/parseCsv.test.ts (if added)

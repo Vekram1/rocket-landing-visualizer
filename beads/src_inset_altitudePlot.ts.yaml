@@ -1,0 +1,14 @@
+id: M4.12
+title: Altitude plot helpers
+status: pending
+owner: assistant
+depends_on:
+  - M3.7
+  - M2.2
+description: Implement altitudePlot.ts for drawing altitude-time plot data and scales suitable for Canvas/SVG inset.
+acceptance_criteria: |
+  - src/inset/altitudePlot.ts produces scaled points/paths for altitude vs time with clamping and axis helpers.
+  - Typecheck passes; optional tests for scaling outputs.
+files_touched:
+  - src/inset/altitudePlot.ts
+  - src/inset/__tests__/altitudePlot.test.ts (if added)

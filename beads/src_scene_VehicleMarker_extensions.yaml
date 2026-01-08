@@ -1,0 +1,13 @@
+id: M4.15
+title: Vehicle marker trail & styling
+status: pending
+owner: assistant
+depends_on:
+  - M2.6
+  - M3.9
+description: Extend VehicleMarker to support trailing segment, glow styling, and position updates from interpolated playback state.
+acceptance_criteria: |
+  - src/scene/VehicleMarker.tsx accepts trail/position props and updates smoothly with playback.
+  - Typecheck passes; integrates with store/state hooks.
+files_touched:
+  - src/scene/VehicleMarker.tsx

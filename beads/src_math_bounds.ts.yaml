@@ -1,0 +1,14 @@
+id: M3.10
+title: Bounds calculation
+status: pending
+owner: assistant
+depends_on:
+  - M2.1
+  - M2.2
+description: Add bounds.ts to compute min/max lat/lon/alt and bounding sphere radius for camera fit.
+acceptance_criteria: |
+  - src/math/bounds.ts exports functions to compute bounds from samples and derive camera-fit radius/center.
+  - Typecheck passes; optional tests validate edge cases.
+files_touched:
+  - src/math/bounds.ts
+  - src/math/__tests__/bounds.test.ts (if added)

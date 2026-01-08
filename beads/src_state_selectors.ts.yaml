@@ -1,0 +1,12 @@
+id: M3.2
+title: Derived selectors for state
+status: pending
+owner: assistant
+depends_on:
+  - M3.1
+description: Add memoized selectors for store slices (playback, datasets, toggles) to minimize rerenders and provide derived HUD values.
+acceptance_criteria: |
+  - src/state/selectors.ts exports selector helpers typed against the store.
+  - Selectors avoid inline anonymous functions in components and include derived HUD/time display helpers.
+files_touched:
+  - src/state/selectors.ts

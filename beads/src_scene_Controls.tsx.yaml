@@ -1,0 +1,13 @@
+id: M4.8
+title: Orbit controls config
+status: pending
+owner: assistant
+depends_on:
+  - M1.6
+  - M4.7
+description: Extract OrbitControls config into Controls component with limits/damping and callbacks for fit/reset.
+acceptance_criteria: |
+  - src/scene/Controls.tsx configures OrbitControls props and exposes imperative handles for camera fit/reset.
+  - Typecheck passes and integrates with CameraRig.
+files_touched:
+  - src/scene/Controls.tsx

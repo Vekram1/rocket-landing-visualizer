@@ -1,0 +1,12 @@
+id: M4.10
+title: Inset renderer utilities
+status: pending
+owner: assistant
+depends_on:
+  - M4.9
+description: Add insetRenderer.ts to draw mercator inset paths and markers using Canvas2D utilities.
+acceptance_criteria: |
+  - src/inset/insetRenderer.ts provides functions to draw grid/trajectory/marker on a Canvas2D context using mercator coords.
+  - Typecheck passes; ready for use by inset components.
+files_touched:
+  - src/inset/insetRenderer.ts

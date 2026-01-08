@@ -1,0 +1,13 @@
+id: M3.6
+title: JSON telemetry parser
+status: pending
+owner: assistant
+depends_on:
+  - M3.4
+description: Implement parseJson accepting object-with-samples or top-level array, validating required fields and returning TelemetrySample[].
+acceptance_criteria: |
+  - src/data/parseJson.ts supports both shapes, enforces required numeric fields, and produces clear errors on invalid schema.
+  - Typecheck passes; optional tests may be added for edge cases.
+files_touched:
+  - src/data/parseJson.ts
+  - src/data/__tests__/parseJson.test.ts (if added)

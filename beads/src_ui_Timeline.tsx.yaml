@@ -1,0 +1,14 @@
+id: M4.1
+title: Timeline controls
+status: pending
+owner: assistant
+depends_on:
+  - M3.1
+  - M3.2
+description: Build Timeline component for play/pause, scrub, and speed control wired to Zustand store.
+acceptance_criteria: |
+  - src/ui/Timeline.tsx renders timeline slider/buttons and dispatches store actions.
+  - Component is keyboard accessible and typechecked.
+files_touched:
+  - src/ui/Timeline.tsx
+  - src/ui/timeline.css (if added)

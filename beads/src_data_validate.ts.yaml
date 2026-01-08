@@ -1,0 +1,15 @@
+id: M3.8
+title: Telemetry validation
+status: pending
+owner: assistant
+depends_on:
+  - M3.5
+  - M3.6
+  - M2.2
+description: Implement validate.ts to enforce required fields, numeric ranges, and produce human-friendly errors for telemetry datasets.
+acceptance_criteria: |
+  - src/data/validate.ts validates samples/datasets and returns typed errors with context (line/index) for invalid rows.
+  - Typecheck passes; optional unit tests for edge cases.
+files_touched:
+  - src/data/validate.ts
+  - src/data/__tests__/validate.test.ts (if added)

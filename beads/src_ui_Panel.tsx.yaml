@@ -1,0 +1,18 @@
+id: M4.16
+title: Panel layout integration
+status: pending
+owner: assistant
+depends_on:
+  - M4.1
+  - M4.2
+  - M4.3
+  - M4.4
+  - M4.5
+  - M4.6
+description: Wire App panel to compose DatasetPicker, FileImportButton, Timeline, LayerToggles, Hud/Toasts, and connect to store actions.
+acceptance_criteria: |
+  - src/ui/Panel.tsx arranges child components with props bound to store state.
+  - App uses Panel instead of inline placeholders; typecheck passes.
+files_touched:
+  - src/ui/Panel.tsx
+  - src/app/App.tsx

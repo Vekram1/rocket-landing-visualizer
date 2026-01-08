@@ -1,0 +1,15 @@
+id: M4.2
+title: Dataset picker UI
+status: pending
+owner: assistant
+depends_on:
+  - M3.1
+  - M3.3
+  - M3.4
+description: Create DatasetPicker to list bundled and local datasets, allow selection, and surface active dataset state.
+acceptance_criteria: |
+  - src/ui/DatasetPicker.tsx renders bundled list from store and handles selection callbacks.
+  - Supports empty/local lists gracefully; typecheck passes.
+files_touched:
+  - src/ui/DatasetPicker.tsx
+  - src/ui/datasetPicker.css (if added)

@@ -1,0 +1,14 @@
+id: M4.13
+title: Altitude-time inset component
+status: pending
+owner: assistant
+depends_on:
+  - M4.12
+  - M3.1
+description: Build AltitudeTimeInset component rendering altitude vs time chart with current time cursor and marker synced to playback.
+acceptance_criteria: |
+  - src/inset/AltitudeTimeInset.tsx renders chart using altitudePlot helpers and updates with store playback.
+  - Handles empty data gracefully; typecheck passes.
+files_touched:
+  - src/inset/AltitudeTimeInset.tsx
+  - src/inset/altitudeTimeInset.css (if added)
