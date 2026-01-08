@@ -1,0 +1,17 @@
+id: M7.1
+title: Mercator inset anti-meridian handling
+status: pending
+owner: assistant
+depends_on:
+  - M4.11
+  - M4.10
+  - M4.9
+description: Ensure MercatorInset correctly splits trajectories at the anti-meridian, clamps projection near poles, and renders segments without wrap artifacts.
+acceptance_criteria: |
+  - MercatorInset renders trajectories that cross the anti-meridian without lines wrapping across the map.
+  - Projection clamps at poles; no NaNs or gaps.
+  - Typecheck/build pass.
+files_touched:
+  - src/inset/MercatorInset.tsx
+  - src/inset/insetRenderer.ts
+  - src/inset/mercatorMath.ts

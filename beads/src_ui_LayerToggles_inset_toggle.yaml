@@ -1,0 +1,17 @@
+id: M7.3
+title: Inset visibility toggles
+status: pending
+owner: assistant
+depends_on:
+  - M4.3
+  - M4.11
+  - M4.13
+description: Ensure Mercator and Altitude inset visibility is controlled via LayerToggles/store flags and hidden when off.
+acceptance_criteria: |
+  - LayerToggles controls inset visibility; both insets hide/show without layout glitches.
+  - Defaults align with PLAN; typecheck/build pass.
+files_touched:
+  - src/ui/LayerToggles.tsx
+  - src/app/App.tsx
+  - src/state/store.ts
+  - src/state/selectors.ts

@@ -1,0 +1,15 @@
+id: M7.2
+title: Sync inset marker with playback
+status: pending
+owner: assistant
+depends_on:
+  - M4.11
+  - M4.17
+description: Keep Mercator inset marker position in sync with playback time and HUD sample selection, handling empty data gracefully.
+acceptance_criteria: |
+  - Marker in MercatorInset updates with playback time/clock and matches HUD/current sample.
+  - No errors when dataset is empty or missing optional fields.
+  - Typecheck/build pass.
+files_touched:
+  - src/inset/MercatorInset.tsx
+  - src/state/selectors.ts
