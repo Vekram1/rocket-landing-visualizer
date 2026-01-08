@@ -22,7 +22,16 @@ function buildLines(step = 15) {
     latLines.push(pts)
   }
 
-  for (let lon = -180; lon <= 180; lon += step) {
+  const lonValues: number[] = []
+  for (let lon = -180; lon < 180; lon += step) {
+    lonValues.push(lon)
+  }
+  if (!lonValues.some((lon) => Math.abs(lon) < 1e-6)) {
+    lonValues.push(0)
+  }
+  lonValues.sort((a, b) => a - b)
+
+  lonValues.forEach((lon) => {
     const pts: Triplet[] = []
     for (let lat = -90; lat <= 90; lat += 5) {
       const phi = (90 - lat) * DEG2RAD
@@ -33,7 +42,7 @@ function buildLines(step = 15) {
       pts.push([x, y, z])
     }
     lonLines.push(pts)
-  }
+  })
 
   return { latLines, lonLines }
 }
@@ -45,7 +54,7 @@ export type GridLayerProps = {
   lineWidth?: number
 }
 
-export function GridLayer({ step = 15, color = '#324260', highlightColor = '#7ef3ff', lineWidth = 1 }: GridLayerProps) {
+export function GridLayer({ step = 15, color = '#324260', highlightColor = '#7ef3ff', lineWidth = 2 }: GridLayerProps) {
   const { latLines, lonLines } = useMemo(() => buildLines(step), [step])
 
   return (
@@ -64,7 +73,7 @@ export function GridLayer({ step = 15, color = '#324260', highlightColor = '#7ef
       })}
 
       {lonLines.map((pts, i) => {
-        const lonDeg = -180 + i * step
+        const lonDeg = 0 + i * step
         const isPrime = Math.abs(lonDeg) < 1e-3
         return (
           <Line
