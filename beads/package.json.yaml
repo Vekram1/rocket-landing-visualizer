@@ -1,6 +1,6 @@
 id: M1.1
 title: Scaffold Vite React+TS app
-status: pending
+status: completed
 owner: assistant
 depends_on: []
 description: Initialize Vite React+TS project and add core scripts plus dependencies (react, react-dom, three, @react-three/fiber, @react-three/drei, zustand) using npm.

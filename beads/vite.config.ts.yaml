@@ -1,6 +1,6 @@
 id: M1.2
 title: Configure Vite & aliases
-status: pending
+status: completed
 owner: assistant
 depends_on:
   - M1.1
