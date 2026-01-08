@@ -1,6 +1,6 @@
 id: M4.17
 title: Playback clock hook
-status: pending
+status: completed
 owner: assistant
 depends_on:
   - M3.1
