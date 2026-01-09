@@ -74,7 +74,8 @@ export function GridLayer({ step = 15, color = '#324260', highlightColor = '#7ef
 
       {lonLines.map((pts, i) => {
         const lonDeg = 0 + i * step
-        const isPrime = Math.abs(lonDeg) < 1e-3
+        // const isPrime = Math.abs(lonDeg) < 1e-3
+        const isPrime = Math.abs(lonDeg) < 185 && Math.abs(lonDeg) > 175
         return (
           <Line
             key={`lon-${i}`}

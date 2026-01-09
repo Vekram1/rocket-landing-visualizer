@@ -9,6 +9,8 @@ export type CameraRigProps = {
   controlsRef?: React.RefObject<OrbitControlsImpl | null>
   padding?: number
   resetSignal?: number
+  minDistance?: number
+  maxDistance?: number
 }
 
 function computeFit(samples: TelemetrySample[]): { center: Vector3; radius: number } {
@@ -32,13 +34,20 @@ function computeFit(samples: TelemetrySample[]): { center: Vector3; radius: numb
   return { center, radius: maxRadius }
 }
 
-export function CameraRig({ samples, controlsRef, padding = 1.6, resetSignal = 0 }: CameraRigProps) {
+export function CameraRig({
+  samples,
+  controlsRef,
+  padding = 1.6,
+  resetSignal = 0,
+  minDistance = 1.8,
+  maxDistance = 8,
+}: CameraRigProps) {
   useEffect(() => {
     if (!samples.length) return
     const { center, radius } = computeFit(samples)
     const controls = controlsRef?.current
 
-    const distance = radius * padding || 3.2
+    const distance = Math.min(Math.max(radius * padding, minDistance), maxDistance) || 3.2
     const camera = controls?.object
 
     if (camera) {
@@ -51,7 +60,7 @@ export function CameraRig({ samples, controlsRef, padding = 1.6, resetSignal = 0
       controls.target.copy(center)
       controls.update()
     }
-  }, [samples, controlsRef, padding, resetSignal])
+  }, [samples, controlsRef, padding, resetSignal, minDistance, maxDistance])
 
   return null
 }

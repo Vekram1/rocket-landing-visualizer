@@ -78,7 +78,14 @@ export function GlobeCanvas({
         <TrajectoryLayer trajectories={trajectories} />
         <VehicleMarker position={markerPosition} />
         {fitEnabled && samples.length > 0 && (
-          <CameraRig samples={samples} controlsRef={controlsRef} resetSignal={resetSignal} />
+          <CameraRig
+            samples={samples}
+            controlsRef={controlsRef}
+            resetSignal={resetSignal}
+            padding={1.8}
+            minDistance={2}
+            maxDistance={10}
+          />
         )}
       </Suspense>
       <Controls ref={controlsRef} />

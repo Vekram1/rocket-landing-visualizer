@@ -1,6 +1,6 @@
 id: M8.3
 title: Fit-to-trajectory polish
-status: pending
+status: completed
 owner: assistant
 depends_on:
   - M4.7
